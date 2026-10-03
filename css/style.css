@@ -19,7 +19,6 @@
   box-sizing: border-box;
 }
 
-/* ===== Page background and twinkling stars (same on every page) ===== */
 html {
   background:
     linear-gradient(180deg, var(--deep), var(--sky) 80vh) no-repeat,
@@ -74,7 +73,6 @@ body::after {
   }
 }
 
-/* ===== Typography ===== */
 h1,
 h2,
 h3,
@@ -92,7 +90,6 @@ a {
   color: var(--amber);
 }
 
-/* ===== Navigation ===== */
 .site-nav {
   background: var(--deep);
   border-bottom: 3px solid var(--amber);
@@ -130,7 +127,6 @@ a {
   padding: 0.5rem 1rem;
 }
 
-/* ===== Home page: lighthouse hero ===== */
 .hero {
   --cy: max(44%, calc(165px + 42vmin));
   position: relative;
@@ -302,7 +298,6 @@ a {
   }
 }
 
-/* ===== Inner pages: page header ===== */
 .page-head {
   padding: 3.5rem 0 0.5rem;
 }
@@ -329,7 +324,6 @@ a {
   padding: 2.5rem 0 3.5rem;
 }
 
-/* ===== Cards (home links and catalog) ===== */
 .door,
 .file {
   position: relative;
@@ -412,7 +406,6 @@ a {
   color: var(--muted);
 }
 
-/* ===== Catalog drawers ===== */
 .drawer {
   margin: 2.5rem 0 1.2rem;
   font-size: 1.6rem;
@@ -428,7 +421,6 @@ a {
   background: var(--line);
 }
 
-/* ===== Compare table ===== */
 .table-sea {
   --bs-table-bg: var(--panel);
   --bs-table-color: var(--text);
@@ -459,7 +451,6 @@ a {
   color: var(--muted);
 }
 
-/* ===== Reading Room form ===== */
 .form-control,
 .form-select {
   background-color: var(--deep);
@@ -474,7 +465,7 @@ a {
   box-shadow: 0 0 0 0.2rem rgba(255, 198, 92, 0.25);
 }
 
-/* ===== Buttons ===== */
+
 .btn-lamp {
   background: var(--amber);
   color: var(--deep);
@@ -493,7 +484,7 @@ a {
   transform: translateY(-2px);
 }
 
-/* ===== Footer ===== */
+
 footer {
   background: var(--deep);
   color: var(--muted);
@@ -502,7 +493,6 @@ footer {
   border-top: 3px solid var(--amber);
 }
 
-/* ===== Responsive rules (own media queries) ===== */
 @media (max-width: 767px) {
   .section {
     padding: 1.8rem 0 2.5rem;
@@ -543,7 +533,7 @@ footer {
   }
 }
 
-/* ===== Catalog card photos ===== */
+
 .photo {
   position: relative;
   aspect-ratio: 4/3;
@@ -589,14 +579,13 @@ footer {
   background: var(--deep);
 }
 
-/* ===== Photo credits list ===== */
+
 .credits {
   columns: 16rem;
   padding-left: 1.2rem;
   margin: 0.5rem 0 0;
 }
 
-/* ===== Footer layout ===== */
 .footer-title {
   font-size: 1.5rem;
   color: var(--amber);
@@ -622,6 +611,7 @@ footer {
 .footer-list a {
   color: var(--muted);
   text-decoration: none;
+  overflow-wrap: anywhere; 
   transition: color 0.2s;
 }
 
