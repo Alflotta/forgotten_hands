@@ -1,0 +1,171 @@
+.game {
+  padding: 1.5rem;
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  background: rgba(29, 56, 80, 0.6);
+  transition: border-color 0.3s;
+}
+
+.game.is-over {
+  border-color: #ff6b64;
+}
+
+.game.is-win {
+  border-color: #5ec28a;
+}
+
+.game-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  margin-bottom: 0.6rem;
+  color: var(--muted);
+}
+
+.game-stats strong {
+  color: var(--amber);
+  font-size: 1.2rem;
+}
+
+.lamps i {
+  margin-left: 0.2rem;
+  font-size: 1.3rem;
+  color: var(--amber);
+  filter: drop-shadow(0 0 6px rgba(255, 198, 92, 0.8));
+}
+
+.lamps i.is-out {
+  color: var(--line);
+  filter: none;
+}
+
+.game-progress {
+  width: 100%;
+  height: 0.7rem;
+  margin-bottom: 1.4rem;
+  border: 0;
+  border-radius: 50rem;
+  overflow: hidden;
+  accent-color: var(--amber);
+}
+
+.game-cards {
+  display: grid;
+  gap: 1rem;
+  align-items: center;
+}
+
+.game-card {
+  height: auto;
+  transition:
+    transform 0.3s,
+    box-shadow 0.3s,
+    border-color 0.3s;
+}
+
+.game-card .photo {
+  aspect-ratio: 16 / 10;
+}
+
+.game-card h2 {
+  margin: 0 0 0.2rem;
+  font-size: 1.5rem;
+}
+
+.game-card .era {
+  min-height: 1.7em;
+  font-size: 1.1rem;
+}
+
+.game-card.is-right {
+  border-color: #5ec28a;
+  box-shadow: 0 0 28px rgba(94, 194, 138, 0.35);
+}
+
+.game-card.is-wrong {
+  border-color: #ff6b64;
+  box-shadow: 0 0 28px rgba(255, 107, 100, 0.35);
+}
+
+.game-card.is-hidden-year .photo img {
+  filter: sepia(0.9) brightness(0.8);
+}
+
+.game-vs {
+  text-align: center;
+  font-family: "DM Serif Display", serif;
+  font-size: 1.6rem;
+  color: var(--amber);
+}
+
+.game-message {
+  min-height: 3.2rem;
+  margin: 1.25rem 0 1rem;
+  font-size: 1.1rem;
+}
+
+.game-message.is-right {
+  color: #5ec28a;
+}
+
+.game-message.is-wrong {
+  color: #ff8a84;
+}
+
+.game-message.is-warn {
+  color: var(--muted);
+}
+
+.game-choices {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.game-choices .btn-lamp:disabled {
+  opacity: 0.45;
+  box-shadow: none;
+  transform: none;
+}
+
+.game-tip {
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+@media (min-width: 768px) {
+  .game-cards {
+    grid-template-columns: 1fr auto 1fr;
+  }
+}
+
+@media (max-width: 575px) {
+  .game {
+    padding: 1rem;
+  }
+  .game-card h2 {
+    font-size: 1.25rem;
+  }
+}
+
+.game-progress::-webkit-progress-bar {
+  background: var(--deep);
+  border-radius: 50rem;
+}
+
+.game-progress::-webkit-progress-value {
+  background: var(--amber);
+  border-radius: 50rem;
+  transition: width 0.4s;
+}
+
+.game-progress::-moz-progress-bar {
+  background: var(--amber);
+  border-radius: 50rem;
+}
+
+.game-progress {
+  background: var(--deep);
+}
