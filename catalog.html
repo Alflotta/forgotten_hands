@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Catalog | Forgotten Hands</title>
+    <title>Compare | Forgotten Hands</title>
     <link
       href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
       rel="stylesheet"
@@ -18,6 +18,7 @@
     />
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/catalog.css" rel="stylesheet" />
+    <link href="css/compare.css" rel="stylesheet" />
   </head>
   <body>
     <a class="skip-link" href="#main">Skip to content</a>
@@ -40,8 +41,8 @@
           <div class="collapse navbar-collapse" id="menu">
             <ul class="navbar-nav ms-auto">
               <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link active" href="catalog.html">Catalog</a></li>
-              <li class="nav-item"><a class="nav-link" href="compare.html">Compare</a></li>
+              <li class="nav-item"><a class="nav-link" href="catalog.html">Catalog</a></li>
+              <li class="nav-item"><a class="nav-link active" href="compare.html">Compare</a></li>
               <li class="nav-item"><a class="nav-link" href="game.html">Game</a></li>
               <li class="nav-item">
                 <a class="nav-link" href="reading-room.html">Reading Room</a>
@@ -55,138 +56,55 @@
     <main id="main">
       <section class="page-head">
         <div class="container">
-          <h1>Catalog</h1>
+          <h1>Compare</h1>
           <p class="mb-0">
-            Ten cards on one shelf. Search, filter by drawer, sort, and save your favourites.
+            Dates are approximate: the same job disappeared at different times in different
+            countries.
           </p>
         </div>
       </section>
-      <section class="section pb-0">
+      <section class="section">
         <div class="container">
-          <h2 class="visually-hidden-heading">Find a card</h2>
-          <form class="toolbar" id="toolbar" role="search" novalidate>
-            <div class="row g-3 align-items-end">
-              <div class="col-12 col-md-6">
-                <label class="form-label" for="search">Search by name, job or replacement</label>
-                <input
-                  class="form-control"
-                  type="search"
-                  id="search"
-                  placeholder="e.g. lamp, ice, telephone"
-                  autocomplete="off"
-                />
+          <h2 class="visually-hidden-heading">Controls</h2>
+          <div class="toolbar compare-tools">
+            <div class="row g-3 align-items-center">
+              <div class="col-12 col-lg-7">
+                <label class="form-label" for="year">
+                  Travel in time: <output id="year-out" class="year-out">1950</output>
+                </label>
+                <input class="form-range" type="range" id="year" min="1700" max="2020" step="5" value="1950" />
+                <div class="range-ends" aria-hidden="true"><span>1700</span><span>2020</span></div>
               </div>
-              <div class="col-6 col-md-3">
-                <label class="form-label" for="sort">Sort by</label>
-                <select class="form-select" id="sort">
-                  <option value="name">Name A–Z</option>
-                  <option value="early">Vanished first</option>
-                  <option value="late">Vanished last</option>
-                </select>
-              </div>
-              <div class="col-6 col-md-3">
-                <button class="btn btn-shelf w-100" id="saved-only" type="button" aria-pressed="false">
-                  <i class="bi bi-bookmark-heart" aria-hidden="true"></i> My shelf
-                  <span class="badge-count" id="saved-count">0</span>
-                </button>
+              <div class="col-12 col-lg-5">
+                <div class="form-check form-switch">
+                  <input class="form-check-input" type="checkbox" role="switch" id="only-alive" />
+                  <label class="form-check-label" for="only-alive">Hide jobs that had already vanished</label>
+                </div>
+                <p class="result-line mb-0" id="compare-stats" role="status" aria-live="polite"></p>
               </div>
             </div>
-            <fieldset class="chips mt-3">
-              <legend class="visually-hidden-heading">Drawer</legend>
-              <div id="chips"></div>
-            </fieldset>
-          </form>
-          <p class="result-line" id="result-line" role="status" aria-live="polite"></p>
-        </div>
-      </section>
-      <section class="section pt-0">
-        <div class="container">
-          <div class="row g-4 justify-content-center" id="grid"></div>
-          <div class="empty-state" id="empty" hidden>
-            <i class="bi bi-journal-x" aria-hidden="true"></i>
-            <h3 id="empty-title">The shelf is empty</h3>
-            <p id="empty-text">Try another word or clear the filters.</p>
-            <button class="btn btn-lamp" id="reset" type="button">Clear filters</button>
           </div>
 
-          <h2 class="drawer" id="credits">Photo credits</h2>
-          <p class="sub border-0">
-            Photos from Wikimedia Commons. The author and licence of each photo are on its file
-            page:
-          </p>
-          <ul class="credits">
-            <li>
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Lamplighter_-_about_1903._-_Flickr_-_JFGryphon.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Lamplighter</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Mary_Jackson_1979_Portrait_(LRC-1979-B701_P-07085).jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Human computer</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Telephone_switchboard_operators,_ca_1922_(MOHAI_5108).jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Switchboard operator</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Ice_cutting_on_the_Neva,_c._1913.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Ice cutter</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://commons.wikimedia.org/wiki/File:F%C3%A9lix_Bonfils,_Porteuse_d%27eau_au_Caire_(Water_Carrier_in_Cairo),_c._1870,_NGA_129617.jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Water carrier</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Horse_drawn_carriage_in_front_of_the_John_J_Sesnon_Company,_Nome,_Alaska,_between_1900_and_1910_(AL%2BCA_6864).jpg"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Carriage driver</a
-              >
-            </li>
-            <li>
-              <a
-                href="https://commons.wikimedia.org/wiki/File:Silent_film_theater_in_Sherlock_Jr.,_1924.png"
-                target="_blank"
-                rel="noopener noreferrer"
-                >Silent-film pianist</a
-              >
-            </li>
-          </ul>
-          <p class="sub border-0 mt-3">
-            Icons:
-            <a href="https://icons.getbootstrap.com/" target="_blank" rel="noopener noreferrer"
-              >Bootstrap Icons</a
-            >. Fonts: DM Serif Display, Work Sans and Special Elite from
-            <a href="https://fonts.google.com/" target="_blank" rel="noopener noreferrer"
-              >Google Fonts</a
-            >. Texts were prepared with AI assistance.
-          </p>
-        </div>
-      </section>
-
+          <div class="table-responsive mt-4">
+            <table class="table table-sea" id="compare-table">
+              <caption>
+                Professions side by side. Press a column name to sort.
+              </caption>
+              <thead>
+                <tr id="head-row"></tr>
+              </thead>
+              <tbody id="compare-body"></tbody>
+            </table>
+          </div>
+          <div class="empty-state" id="compare-empty" hidden>
+            <i class="bi bi-hourglass-bottom" aria-hidden="true"></i>
+            <h3>Nothing is left</h3>
+            <p>By this year every job on the shelf had vanished. Move the slider back.</p>
+          </div>
         </div>
       </section>
     </main>
+
     <footer>
       <div class="container">
         <div class="row g-4">
@@ -208,6 +126,7 @@
               </ul>
             </nav>
           </div>
+
           <div class="col-6 col-md-3 col-lg-3">
             <h2 class="footer-heading">Help &amp; contact</h2>
             <ul class="footer-list">
@@ -224,7 +143,6 @@
             <h2 class="footer-heading">About the content</h2>
             <ul class="footer-list">
               <li>Texts were prepared with AI assistance.</li>
-              <li>Code written with the help of an AI assistant (Claude by Anthropic).</li>
               <li>Effects: jQuery. Icons: Bootstrap Icons. Fonts: Google Fonts.</li>
               <li><a href="catalog.html#credits">Photo credits</a></li>
             </ul>
@@ -232,7 +150,7 @@
         </div>
 
         <p class="footer-bottom mb-0">
-          &copy; 2026 Forgotten Hands. Endterm project, Web Technologies 1.
+          &copy; 2026 Forgotten Hands
         </p>
       </div>
     </footer>
@@ -240,6 +158,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="js/data.js"></script>
     <script src="js/common.js"></script>
-    <script src="js/catalog.js"></script>
+    <script src="js/compare.js"></script>
   </body>
 </html>
