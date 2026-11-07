@@ -1,0 +1,82 @@
+.compare-tools {
+  padding: 1.2rem;
+}
+
+.year-out {
+  margin-left: 0.4rem;
+  padding: 0.1rem 0.7rem;
+  border-radius: 6px;
+  background: var(--deep);
+  color: var(--amber);
+  font-family: "Special Elite", monospace;
+  font-size: 1.2rem;
+}
+
+.form-range {
+  accent-color: var(--amber);
+}
+
+.form-range::-webkit-slider-thumb {
+  background: var(--amber);
+}
+
+.form-range::-moz-range-thumb {
+  background: var(--amber);
+}
+
+.form-range:focus {
+  box-shadow: none;
+}
+
+.form-range:focus-visible::-webkit-slider-thumb {
+  box-shadow: 0 0 0 4px #fff;
+}
+
+.form-range:focus-visible::-moz-range-thumb {
+  box-shadow: 0 0 0 4px #fff;
+}
+
+.range-ends {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.form-check-input:checked {
+  background-color: var(--amber);
+  border-color: var(--amber);
+}
+
+.sort-btn {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  white-space: nowrap;
+}
+
+.sort-btn:hover {
+  text-decoration: underline;
+}
+
+.sort-btn .arrow {
+  display: inline-block;
+  width: 1em;
+  color: var(--red);
+}
+
+.table-sea tbody tr.is-gone > * {
+  opacity: 0.38;
+}
+
+.table-sea tbody tr.is-alive > th {
+  box-shadow: inset 4px 0 0 var(--amber);
+}
+
+.table-sea .status {
+  font-family: "Special Elite", monospace;
+  font-size: 0.85rem;
+  white-space: nowrap;
+}

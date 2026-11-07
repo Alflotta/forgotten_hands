@@ -1,0 +1,169 @@
+.toolbar {
+  padding: 1.2rem;
+  background: rgba(29, 56, 80, 0.6);
+  border: 2px solid var(--line);
+  border-radius: 6px;
+}
+
+.toolbar .form-label {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.chips {
+  border: 0;
+  padding: 0;
+  margin: 0;
+}
+
+#chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.chip {
+  padding: 0.3rem 0.9rem;
+  border: 2px solid var(--line);
+  border-radius: 50rem;
+  background: var(--deep);
+  color: var(--text);
+  font-size: 0.9rem;
+  transition:
+    background 0.2s,
+    border-color 0.2s,
+    color 0.2s,
+    transform 0.2s;
+}
+
+.chip:hover {
+  border-color: var(--amber);
+  transform: translateY(-2px);
+}
+
+.chip[aria-pressed="true"] {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--deep);
+  font-weight: 600;
+}
+
+.btn-shelf {
+  padding: 0.5rem 0.8rem;
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  background: var(--deep);
+  color: var(--text);
+  transition:
+    border-color 0.2s,
+    background 0.2s;
+}
+
+.btn-shelf:hover {
+  border-color: var(--amber);
+  color: var(--text);
+}
+
+.btn-shelf[aria-pressed="true"] {
+  background: var(--amber);
+  border-color: var(--amber);
+  color: var(--deep);
+}
+
+.badge-count {
+  display: inline-block;
+  min-width: 1.5rem;
+  margin-left: 0.2rem;
+  padding: 0 0.4rem;
+  border-radius: 50rem;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+.result-line {
+  min-height: 1.6rem;
+  margin: 1rem 0 1.5rem;
+  font-family: "Special Elite", monospace;
+  color: var(--amber);
+}
+
+.file.book {
+  display: flex;
+  flex-direction: column;
+}
+
+.file.book .sub {
+  margin-top: auto;
+}
+
+.book-actions {
+  display: flex;
+  gap: 0.6rem;
+  margin-top: 0.9rem;
+}
+
+.book-actions button {
+  flex: 1;
+  padding: 0.35rem 0.6rem;
+  border: 2px solid var(--line);
+  border-radius: 6px;
+  background: var(--deep);
+  color: var(--text);
+  font-size: 0.9rem;
+  transition:
+    border-color 0.2s,
+    background 0.2s,
+    color 0.2s;
+}
+
+.book-actions button:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+}
+
+.book-actions .save[aria-pressed="true"] {
+  background: var(--red);
+  border-color: var(--red);
+  color: #fff;
+}
+
+.book-details {
+  display: none;
+  margin: 0.8rem 0 0;
+  padding: 0.7rem 0.9rem;
+  border-left: 3px solid var(--amber);
+  background: var(--deep);
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+.book-details strong {
+  color: var(--text);
+}
+
+.empty-state {
+  max-width: 28rem;
+  margin: 1rem auto 0;
+  padding: 2rem 1.5rem;
+  text-align: center;
+  border: 2px dashed var(--line);
+  border-radius: 6px;
+}
+
+.empty-state i {
+  font-size: 2.6rem;
+  color: var(--amber);
+}
+
+.empty-state[hidden] {
+  display: none;
+}
+
+mark {
+  padding: 0 0.1em;
+  background: var(--amber);
+  color: var(--deep);
+  border-radius: 2px;
+}
