@@ -2,16 +2,16 @@
   padding: 1.5rem;
   border: 2px solid var(--line);
   border-radius: 6px;
-  background: rgba(29, 56, 80, 0.6);
+  background: var(--surface);
   transition: border-color 0.3s;
 }
 
 .game.is-over {
-  border-color: #ff6b64;
+  border-color: var(--bad);
 }
 
 .game.is-win {
-  border-color: #5ec28a;
+  border-color: var(--ok);
 }
 
 .game-stats {
@@ -79,13 +79,13 @@
 }
 
 .game-card.is-right {
-  border-color: #5ec28a;
-  box-shadow: 0 0 28px rgba(94, 194, 138, 0.35);
+  border-color: var(--ok);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--ok) 35%, transparent);
 }
 
 .game-card.is-wrong {
-  border-color: #ff6b64;
-  box-shadow: 0 0 28px rgba(255, 107, 100, 0.35);
+  border-color: var(--bad);
+  box-shadow: 0 0 28px color-mix(in srgb, var(--bad) 35%, transparent);
 }
 
 .game-card.is-hidden-year .photo img {
@@ -106,11 +106,11 @@
 }
 
 .game-message.is-right {
-  color: #5ec28a;
+  color: var(--ok);
 }
 
 .game-message.is-wrong {
-  color: #ff8a84;
+  color: var(--bad-text);
 }
 
 .game-message.is-warn {

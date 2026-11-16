@@ -7,6 +7,24 @@
   --muted: #a9bccd;
   --amber: #ffc65c;
   --red: #d6403a;
+
+  --surface: rgba(29, 56, 80, 0.6);
+  --nav-open: rgba(11, 22, 35, 0.95);
+  --glow: rgba(255, 198, 92, 0.22);
+  --row-hover: #25455f;
+  --stripe: #10202f;
+  --focus: #fff;
+  --focus-glow: rgba(255, 198, 92, 0.55);
+  --focus-soft: rgba(255, 198, 92, 0.25);
+  --ok: #5ec28a;
+  --ok-bg: rgba(94, 194, 138, 0.12);
+  --bad: #ff6b64;
+  --bad-text: #ff8a84;
+  --placeholder: #7f95a8;
+  --card-shadow: rgba(0, 0, 0, 0.55);
+  --hero-text: #fff;
+  --title-glow: rgba(255, 198, 92, 0.55);
+
 }
 
 * {
@@ -117,7 +135,7 @@ a {
 
 .nav-over .navbar-collapse.show,
 .nav-over .navbar-collapse.collapsing {
-  background: rgba(11, 22, 35, 0.95);
+  background: var(--nav-open);
   padding: 0.5rem 1rem;
 }
 
@@ -176,7 +194,7 @@ a {
 .file:hover {
   transform: translateY(-8px);
   border-color: var(--amber);
-  box-shadow: 0 12px 30px rgba(255, 198, 92, 0.22);
+  box-shadow: 0 12px 30px var(--glow);
 }
 
 .door:hover .ico,
@@ -262,7 +280,7 @@ a {
 }
 
 .table-sea tbody tr:hover > * {
-  background: #25455f;
+  background: var(--row-hover);
 }
 
 .table-sea i {
@@ -285,12 +303,27 @@ a {
 .form-control:focus,
 .form-select:focus {
   border-color: var(--amber);
-  box-shadow: 0 0 0 0.2rem rgba(255, 198, 92, 0.25);
+  box-shadow: 0 0 0 0.2rem var(--focus-soft);
 }
 
+/* Main buttons keep their own colour in every state. Bootstrap's .btn:hover
+   takes its colours from --bs-btn-* variables, so we set them explicitly;
+   otherwise the button turns transparent and the dark text disappears. */
 .btn-lamp {
-  background: var(--amber);
-  color: var(--deep);
+  --bs-btn-color: #0b1623;
+  --bs-btn-bg: #ffc65c;
+  --bs-btn-border-color: #ffc65c;
+  --bs-btn-hover-color: #0b1623;
+  --bs-btn-hover-bg: #ffc65c;
+  --bs-btn-hover-border-color: #ffc65c;
+  --bs-btn-active-color: #0b1623;
+  --bs-btn-active-bg: #ffc65c;
+  --bs-btn-active-border-color: #ffc65c;
+  --bs-btn-disabled-color: #0b1623;
+  --bs-btn-disabled-bg: #ffc65c;
+  --bs-btn-disabled-border-color: #ffc65c;
+  background: #ffc65c;
+  color: #0b1623;
   border: 0;
   border-radius: 50rem;
   padding: 0.55rem 1.6rem;
@@ -300,9 +333,16 @@ a {
     transform 0.25s;
 }
 
+.btn-lamp:hover,
+.btn-lamp:focus,
+.btn-lamp:active,
+.btn-lamp:first-child:active {
+  background: #ffc65c;
+  color: #0b1623;
+}
+
 .btn-lamp:hover {
-  color: var(--deep);
-  box-shadow: 0 0 22px var(--amber);
+  box-shadow: 0 0 22px rgba(255, 198, 92, 0.85);
   transform: translateY(-2px);
 }
 
@@ -352,7 +392,7 @@ footer {
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: repeating-linear-gradient(45deg, var(--deep) 0 12px, #10202f 12px 24px);
+  background: repeating-linear-gradient(45deg, var(--deep) 0 12px, var(--stripe) 12px 24px);
 }
 
 .photo .big {
@@ -459,9 +499,9 @@ button:focus-visible,
 .navbar-brand:focus-visible,
 .form-check-input:focus-visible,
 summary:focus-visible {
-  outline: 3px solid #fff;
+  outline: 3px solid var(--focus);
   outline-offset: 3px;
-  box-shadow: 0 0 0 6px rgba(255, 198, 92, 0.55);
+  box-shadow: 0 0 0 6px var(--focus-glow);
 }
 
 .door:focus-visible,
@@ -503,3 +543,160 @@ summary:focus-visible {
   clip: rect(0 0 0 0);
   white-space: nowrap;
 }
+
+
+/* ===== Theme toggle in the navigation bar ===== */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  margin-top: 0.4rem;
+  padding: 0.3rem 0.85rem;
+  border: 2px solid var(--line);
+  border-radius: 50rem;
+  background: transparent;
+  color: var(--text);
+  font-size: 0.9rem;
+  transition:
+    border-color 0.25s,
+    color 0.25s,
+    background 0.25s,
+    transform 0.25s;
+}
+
+.theme-toggle:hover {
+  border-color: var(--amber);
+  color: var(--amber);
+  transform: translateY(-1px);
+}
+
+.theme-toggle i {
+  transition: transform 0.5s;
+}
+
+.theme-toggle:hover i {
+  transform: rotate(40deg);
+}
+
+@media (min-width: 768px) {
+  .theme-toggle {
+    margin: 0 0 0 0.6rem;
+  }
+}
+
+.site-nav .navbar-toggler {
+  border-color: var(--line);
+}
+
+.site-nav .navbar-toggler-icon {
+  filter: invert(1);
+}
+
+
+/* ===== LIGHT MODE: daytime sky ===== */
+[data-bs-theme="light"] {
+  /* cool morning-fog palette that matches the blue sky */
+  --sky: #e3f1fa;
+  --deep: #f3f8fc;
+  --panel: #fbfdff;
+  --line: #b4c9db;
+  --text: #12283d;
+  --muted: #3f5870;
+  --amber: #1f5f8b;
+  --red: #c0332d;
+
+  --surface: rgba(255, 255, 255, 0.7);
+  --nav-open: rgba(243, 248, 252, 0.97);
+  --glow: rgba(31, 95, 139, 0.22);
+  --row-hover: #e6f0f8;
+  --stripe: #e8f0f6;
+  --focus: #12283d;
+  --focus-glow: rgba(31, 95, 139, 0.35);
+  --focus-soft: rgba(31, 95, 139, 0.22);
+  --ok: #15803d;
+  --ok-bg: rgba(21, 128, 61, 0.1);
+  --bad: #c0332d;
+  --bad-text: #b42318;
+  --placeholder: #6b8196;
+  --card-shadow: rgba(18, 40, 61, 0.28);
+  --hero-text: #0f2a40;
+  --title-glow: rgba(255, 255, 255, 0.95);
+
+}
+
+html[data-bs-theme="light"] {
+  background:
+    linear-gradient(180deg, #6fb7e8 0, #b9defa 45vh, var(--sky) 100vh) no-repeat,
+    var(--sky);
+}
+
+html[data-bs-theme="light"] body::before {
+  /* soft clouds instead of stars */
+  background-image:
+    radial-gradient(ellipse 110px 30px at 140px 90px, rgba(255, 255, 255, 0.95), transparent 70%),
+    radial-gradient(ellipse 70px 26px at 100px 80px, rgba(255, 255, 255, 0.9), transparent 70%),
+    radial-gradient(ellipse 90px 24px at 190px 82px, rgba(255, 255, 255, 0.9), transparent 70%),
+    radial-gradient(ellipse 130px 34px at 560px 230px, rgba(255, 255, 255, 0.85), transparent 70%),
+    radial-gradient(ellipse 80px 28px at 510px 222px, rgba(255, 255, 255, 0.85), transparent 70%),
+    radial-gradient(ellipse 100px 30px at 640px 224px, rgba(255, 255, 255, 0.8), transparent 70%);
+  background-size: 820px 360px;
+  background-repeat: repeat-x;
+  background-position: 0 0;
+  animation: clouds 140s linear infinite;
+}
+
+html[data-bs-theme="light"] body::after {
+  background-image:
+    radial-gradient(ellipse 120px 32px at 300px 150px, rgba(255, 255, 255, 0.7), transparent 70%),
+    radial-gradient(ellipse 80px 26px at 250px 142px, rgba(255, 255, 255, 0.65), transparent 70%);
+  background-size: 1100px 420px;
+  background-repeat: repeat-x;
+  background-position: 0 120px;
+  animation: clouds 220s linear -60s infinite;
+}
+
+@keyframes clouds {
+  to {
+    background-position-x: 1100px;
+  }
+}
+
+html[data-bs-theme="light"] .site-nav {
+  box-shadow: 0 2px 12px rgba(20, 40, 60, 0.08);
+}
+
+html[data-bs-theme="light"] .site-nav .navbar-toggler-icon {
+  filter: none;
+}
+
+html[data-bs-theme="light"] .nav-over {
+  box-shadow: none;
+}
+
+html[data-bs-theme="light"] .door,
+html[data-bs-theme="light"] .file {
+  box-shadow: 0 4px 14px rgba(20, 60, 100, 0.08);
+}
+
+html[data-bs-theme="light"] .door:hover,
+html[data-bs-theme="light"] .file:hover {
+  box-shadow: 0 12px 30px var(--glow);
+}
+
+html[data-bs-theme="light"] .photo img {
+  filter: sepia(0.45) contrast(1.05) brightness(0.98);
+}
+
+html[data-bs-theme="light"] footer {
+  box-shadow: 0 -2px 12px rgba(20, 40, 60, 0.05);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html[data-bs-theme="light"] body::before,
+  html[data-bs-theme="light"] body::after,
+  .theme-toggle i {
+    animation: none;
+    transition: none;
+  }
+}
+

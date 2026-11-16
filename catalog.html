@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Special+Elite&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script src="js/theme.js"></script>
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/catalog.css" rel="stylesheet" />
   </head>
@@ -45,6 +46,11 @@
               <li class="nav-item"><a class="nav-link" href="game.html">Game</a></li>
               <li class="nav-item">
                 <a class="nav-link" href="reading-room.html">Reading Room</a>
+              </li>
+              <li class="nav-item">
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">
+                  <i class="bi bi-sun-fill" aria-hidden="true"></i> <span>Day</span>
+                </button>
               </li>
             </ul>
           </div>
@@ -85,7 +91,7 @@
                 </select>
               </div>
               <div class="col-6 col-md-3">
-                <button class="btn btn-shelf w-100" id="saved-only" type="button" aria-pressed="false">
+                <button class="btn btn-shelf w-100" id="saved-only" type="button">
                   <i class="bi bi-bookmark-heart" aria-hidden="true"></i> My shelf
                   <span class="badge-count" id="saved-count">0</span>
                 </button>

@@ -1,6 +1,6 @@
 .toolbar {
   padding: 1.2rem;
-  background: rgba(29, 56, 80, 0.6);
+  background: var(--surface);
   border: 2px solid var(--line);
   border-radius: 6px;
 }
@@ -59,12 +59,18 @@
     background 0.2s;
 }
 
-.btn-shelf:hover {
+.btn-shelf:hover,
+.btn-shelf:focus,
+.btn-shelf:active {
+  background: var(--deep);
   border-color: var(--amber);
   color: var(--text);
 }
 
-.btn-shelf[aria-pressed="true"] {
+.btn-shelf[aria-pressed="true"],
+.btn-shelf[aria-pressed="true"]:hover,
+.btn-shelf[aria-pressed="true"]:focus,
+.btn-shelf[aria-pressed="true"]:active {
   background: var(--amber);
   border-color: var(--amber);
   color: var(--deep);

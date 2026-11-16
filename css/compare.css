@@ -29,11 +29,11 @@
 }
 
 .form-range:focus-visible::-webkit-slider-thumb {
-  box-shadow: 0 0 0 4px #fff;
+  box-shadow: 0 0 0 4px var(--focus);
 }
 
 .form-range:focus-visible::-moz-range-thumb {
-  box-shadow: 0 0 0 4px #fff;
+  box-shadow: 0 0 0 4px var(--focus);
 }
 
 .range-ends {

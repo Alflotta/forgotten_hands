@@ -16,6 +16,7 @@
       href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Special+Elite&family=Work+Sans:wght@400;500;600&display=swap"
       rel="stylesheet"
     />
+    <script src="js/theme.js"></script>
     <link href="css/style.css" rel="stylesheet" />
     <link href="css/home.css" rel="stylesheet" />
   </head>
@@ -46,6 +47,11 @@
               <li class="nav-item">
                 <a class="nav-link" href="reading-room.html">Reading Room</a>
               </li>
+              <li class="nav-item">
+                <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">
+                  <i class="bi bi-sun-fill" aria-hidden="true"></i> <span>Day</span>
+                </button>
+              </li>
             </ul>
           </div>
         </div>
@@ -58,6 +64,7 @@
 
         <div class="ring" id="ring"></div>
         <div class="beam"></div>
+        <div class="fog" aria-hidden="true"><span class="fog-a"></span><span class="fog-b"></span></div>
 
         <button
           class="tower-btn"
@@ -67,7 +74,7 @@
         >
           <svg viewBox="0 -8 60 128" aria-hidden="true">
             <polygon points="20,2 40,2 30,-6" fill="#d6403a" />
-            <rect x="22" y="2" width="16" height="10" fill="#ffc65c" />
+            <rect class="lamp-room" x="22" y="2" width="16" height="10" fill="#ffc65c" />
             <rect x="17" y="12" width="26" height="4" fill="#e8f1ee" />
             <polygon points="22,16 38,16 46,118 14,118" fill="#fff" />
             <polygon points="20.4,36 39.6,36 41,54 19,54" fill="#d6403a" />
@@ -79,12 +86,14 @@
         <div class="hero-actions">
           <p class="hero-hint">Click a photo to open its card, or click the lighthouse to stop the beam.</p>
           <button class="btn btn-lamp" id="random-job" type="button">
-            <i class="bi bi-lightbulb" aria-hidden="true"></i> Shine the light on a random job
+            <i class="bi bi-lightbulb" aria-hidden="true"></i>
+            Shine the light on a random job
           </button>
         </div>
 
         <div class="tile-card" id="tile-card" role="status" aria-live="polite"></div>
 
+        <div class="fog-bank" aria-hidden="true"></div>
         <div class="waves"></div>
       </section>
       <section class="section">

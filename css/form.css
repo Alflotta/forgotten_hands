@@ -1,24 +1,24 @@
 .form-control::placeholder {
-  color: #7f95a8;
+  color: var(--placeholder);
 }
 
 .form-control.is-invalid,
 .form-select.is-invalid {
-  border-color: #ff6b64;
+  border-color: var(--bad);
 }
 
 .form-control.is-valid,
 .form-select.is-valid {
-  border-color: #5ec28a;
+  border-color: var(--ok);
 }
 
 .form-control.is-invalid:focus,
 .form-select.is-invalid:focus {
-  box-shadow: 0 0 0 0.2rem rgba(255, 107, 100, 0.3);
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--bad) 30%, transparent);
 }
 
 .invalid-feedback {
-  color: #ff8a84;
+  color: var(--bad-text);
   font-size: 0.9rem;
 }
 
@@ -33,11 +33,11 @@
 }
 
 .form-check-input.is-invalid {
-  border-color: #ff6b64;
+  border-color: var(--bad);
 }
 
 .form-check-input.is-invalid ~ .form-check-label {
-  color: #ff8a84;
+  color: var(--bad-text);
 }
 
 .form-text {
@@ -45,16 +45,16 @@
 }
 
 .form-text.is-ok {
-  color: #5ec28a;
+  color: var(--ok);
 }
 
 .success-box {
   display: none;
   margin-bottom: 1.5rem;
   padding: 1.2rem 1.4rem;
-  border: 2px solid #5ec28a;
+  border: 2px solid var(--ok);
   border-radius: 6px;
-  background: rgba(94, 194, 138, 0.12);
+  background: var(--ok-bg);
 }
 
 .success-box h2 {
@@ -178,7 +178,7 @@
   display: grid;
   place-items: center;
   overflow: hidden;
-  background: repeating-linear-gradient(45deg, var(--deep) 0 12px, #10202f 12px 24px);
+  background: repeating-linear-gradient(45deg, var(--deep) 0 12px, var(--stripe) 12px 24px);
 }
 
 .preview-photo .big {
