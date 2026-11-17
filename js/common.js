@@ -1,4 +1,24 @@
 "use strict";
+const SHELF_STORAGE_KEY = "fh-shelf";
+
+function getShelfIds() {
+  const ids = loadStored(SHELF_STORAGE_KEY, []);
+  if (!Array.isArray(ids)) return [];
+  return ids.filter((id) => PROFESSIONS.some((item) => item.id === id));
+}
+
+function updateShelfBadge() {
+  const total = getShelfIds().length;
+  document.querySelectorAll("[data-shelf-count]").forEach((badge) => {
+    badge.textContent = total;
+    badge.classList.toggle("is-empty", total === 0);
+  });
+}
+
+updateShelfBadge();
+window.addEventListener("storage", (event) => {
+  if (event.key === SHELF_STORAGE_KEY) updateShelfBadge();
+});
 
 $(function () {
   const $page = $("html, body");
