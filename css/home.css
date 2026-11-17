@@ -107,19 +107,6 @@
   filter: sepia(0.5) contrast(1.05);
 }
 
-.tile .cap {
-  position: absolute;
-  top: 100%;
-  left: 50%;
-  width: 24vmin;
-  transform: translateX(-50%);
-  margin-top: 0.3rem;
-  text-align: center;
-  font-size: max(0.68rem, 1.6vmin);
-  line-height: 1.2;
-  color: var(--hero-text);
-}
-
 .beam {
   position: absolute;
   inset: 0;

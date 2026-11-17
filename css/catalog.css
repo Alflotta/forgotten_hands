@@ -173,3 +173,28 @@ mark {
   color: var(--deep);
   border-radius: 2px;
 }
+
+.toolbar .form-select,
+.btn-shelf {
+  display: flex;
+  align-items: center;
+  height: 2.75rem;
+  font-size: 1rem;
+}
+
+.toolbar .form-select {
+  display: block;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.btn-shelf {
+  justify-content: center;
+  gap: 0.4rem;
+  padding: 0 0.8rem;
+  white-space: nowrap;
+}
+
+.btn-shelf .badge-count {
+  margin-left: 0;
+}

@@ -8,7 +8,7 @@
   --amber: #ffc65c;
   --red: #d6403a;
 
-  --surface: rgba(29, 56, 80, 0.6);
+  --surface: rgba(1, 1, 2, 0.6);
   --nav-open: rgba(11, 22, 35, 0.95);
   --glow: rgba(255, 198, 92, 0.22);
   --row-hover: #25455f;
@@ -305,10 +305,6 @@ a {
   border-color: var(--amber);
   box-shadow: 0 0 0 0.2rem var(--focus-soft);
 }
-
-/* Main buttons keep their own colour in every state. Bootstrap's .btn:hover
-   takes its colours from --bs-btn-* variables, so we set them explicitly;
-   otherwise the button turns transparent and the dark text disappears. */
 .btn-lamp {
   --bs-btn-color: #0b1623;
   --bs-btn-bg: #ffc65c;
@@ -544,8 +540,6 @@ summary:focus-visible {
   white-space: nowrap;
 }
 
-
-/* ===== Theme toggle in the navigation bar ===== */
 .theme-toggle {
   display: inline-flex;
   align-items: center;
@@ -700,3 +694,22 @@ html[data-bs-theme="light"] footer {
   }
 }
 
+
+
+.nav-badge {
+  display: inline-block;
+  min-width: 1.4rem;
+  padding: 0 0.4rem;
+  border-radius: 50rem;
+  background: var(--red);
+  color: #fff;
+  font-size: 0.75rem;
+  line-height: 1.4rem;
+  text-align: center;
+  vertical-align: 0.1em;
+}
+
+.nav-badge.is-empty {
+  background: var(--line);
+  color: var(--text);
+}
