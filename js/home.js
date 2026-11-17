@@ -67,11 +67,7 @@ function createTile(profession, index) {
   pic.className = "pic";
   pic.append(makeIcon(profession), makeImage(profession));
 
-  const caption = document.createElement("span");
-  caption.className = "cap";
-  caption.textContent = profession.name;
-
-  button.append(pic, caption);
+  button.append(pic);
 
   button.addEventListener("click", () => aimAt(index));
   return button;

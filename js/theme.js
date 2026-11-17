@@ -1,7 +1,5 @@
 "use strict";
 
-/* Light / dark mode. This file is loaded in <head>, so the saved mode
-   is applied before the page is painted (no flash of the wrong theme). */
 (function () {
   const KEY = "fh-theme";
   const root = document.documentElement;
@@ -11,7 +9,6 @@
       const saved = JSON.parse(localStorage.getItem(KEY));
       if (saved === "light" || saved === "dark") return saved;
     } catch (error) {
-      /* empty or blocked storage: use the default */
     }
     return "dark";
   }
@@ -20,7 +17,6 @@
     try {
       localStorage.setItem(KEY, JSON.stringify(theme));
     } catch (error) {
-      /* the mode still works for this visit */
     }
   }
 
@@ -47,7 +43,7 @@
     });
   });
 
-  /* keep other open tabs in step */
+
   window.addEventListener("storage", function (event) {
     if (event.key === KEY) applyTheme(readTheme());
   });

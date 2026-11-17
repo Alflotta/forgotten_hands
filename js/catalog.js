@@ -154,7 +154,7 @@ function render() {
       text.textContent = "Check the spelling, try a shorter word, or clear the filters.";
     } else {
       title.textContent = "This drawer is empty";
-      text.textContent = "Try another drawer or switch off “My shelf”.";
+      text.textContent = "Try another drawer or switch off “Saved only”.";
     }
   }
 }
@@ -229,6 +229,7 @@ grid.addEventListener("click", (event) => {
     if (position === -1) saved.push(id);
     else saved.splice(position, 1);
     saveStored(SHELF_KEY, saved);
+    updateShelfBadge();
 
     if (savedOnly) {
       render();

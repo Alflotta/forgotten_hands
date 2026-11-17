@@ -48,6 +48,12 @@
                 <a class="nav-link" href="reading-room.html">Reading Room</a>
               </li>
               <li class="nav-item">
+                <a class="nav-link nav-shelf" href="shelf.html">
+                  <i class="bi bi-bookmark-heart" aria-hidden="true"></i> My shelf
+                  <span class="nav-badge" data-shelf-count>0</span><span class="visually-hidden-heading">cards saved</span>
+                </a>
+              </li>
+              <li class="nav-item">
                 <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to light mode">
                   <i class="bi bi-sun-fill" aria-hidden="true"></i> <span>Day</span>
                 </button>
@@ -63,7 +69,7 @@
         <div class="container">
           <h1>Catalog</h1>
           <p class="mb-0">
-            Ten cards on one shelf. Search, filter by drawer, sort, and save your favourites.
+            Ten cards on one shelf. Search, filter by drawer, sort, and save your favourites to <a href="shelf.html">My shelf</a>.
           </p>
         </div>
       </section>
@@ -92,7 +98,7 @@
               </div>
               <div class="col-6 col-md-3">
                 <button class="btn btn-shelf w-100" id="saved-only" type="button">
-                  <i class="bi bi-bookmark-heart" aria-hidden="true"></i> My shelf
+                  <i class="bi bi-bookmark-heart" aria-hidden="true"></i> Saved only
                   <span class="badge-count" id="saved-count">0</span>
                 </button>
               </div>
@@ -189,9 +195,6 @@
           </p>
         </div>
       </section>
-
-        </div>
-      </section>
     </main>
     <footer>
       <div class="container">
@@ -211,6 +214,7 @@
                 <li><a href="compare.html">Compare</a></li>
                 <li><a href="game.html">Game</a></li>
                 <li><a href="reading-room.html">Reading Room</a></li>
+                <li><a href="shelf.html">My shelf</a></li>
               </ul>
             </nav>
           </div>
@@ -237,7 +241,7 @@
         </div>
 
         <p class="footer-bottom mb-0">
-          &copy; 2026 Forgotten Hands. Endterm project, Web Technologies 1.
+          &copy; 2026 Forgotten Hands. Final project, Web Technologies 1.
         </p>
       </div>
     </footer>
